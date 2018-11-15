@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using GalaSoft.MvvmLight.Command;
 using LoginMVVM.Annotations;
 
@@ -83,6 +85,8 @@ namespace LoginMVVM
                     if (InputPassword == user.Password)
                     {
                         LoginCheck = "Access granted";
+                        Frame currentFrame = Window.Current.Content as Frame;  //Vi laver en lokal variable Frame som indeholder den nuværende frames indhold? og bruger den til at få adgang til navigate
+                        currentFrame.Navigate(typeof(Page2));
                         break;
                     }
 
@@ -106,7 +110,7 @@ namespace LoginMVVM
                     isTaken = true;
                     break;
                 } 
-                else isTaken = false;
+                //else isTaken = false;
             }
             if (!isTaken)
             {
@@ -114,6 +118,7 @@ namespace LoginMVVM
                 LoginCheck = "User added";
             }
             else LoginCheck = "Username is taken";
+            
         }
 
         #region MyRegion
