@@ -105,7 +105,7 @@ namespace LoginMVVM
                 {
                     isTaken = true;
                     break;
-                }
+                } 
                 else isTaken = false;
             }
             if (!isTaken)
