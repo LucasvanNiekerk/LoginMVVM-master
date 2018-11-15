@@ -13,7 +13,7 @@ namespace LoginMVVM
     class User : INotifyPropertyChanged
     {
         private string username;
-        private string password;
+        private string password; 
 
         public User(string username, string password)
         {
